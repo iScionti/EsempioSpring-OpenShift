@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<title>Pagina modifica</title>
+</head>
+<body>
+<div class="container">
+	<div class="pb-2 mt-4 mb-2">
+		<h3>Modifica Contatto</h3>	
+	</div>
+	
+	<div class="col-sm-5" style="margin-top: 50px;margin-bottom: 50px;">
+	<form method="post" th:action="@{/}" th:object="${contatto}">
+		<input type="hidden" th:field="*{id}">  
+		<div class="form-group">
+			<label for="nome">Nome</label>
+			<input type="text" class="form-control"
+			th:field="*{nome}"
+			placeholder="Nome...">
+		</div>
+		<div class="form-group">
+			<label for="cognome">Cognome</label>
+			<input type="text" class="form-control"
+			th:field="*{cognome}"
+			placeholder="Cognome..." required>
+		</div>
+		<div class="form-group">
+			<label for="username">Username</label>
+			<input type="text" class="form-control"
+			th:field="*{username}"
+			placeholder="Username..." required>
+		</div>
+	
+		<button style="margin-top: 20px;" type="submit"
+		class="btn btn-danger">
+			Modifica contatto
+		</button>
+	
+	</form> 
+	</div>
+</div>
+</body>
+</html>
